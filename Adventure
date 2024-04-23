@@ -1,0 +1,89 @@
+def start_adventure():
+    print("Welcome to the Adventure!")
+    print("You find yourself standing at a crossroad.")
+    print("To your left is a dark forest.")
+    print("To your right is a mysterious cave.")
+    print("Which path do you choose? (left/right)")
+
+    choice = input().lower()
+
+    if choice == "left":
+        forest_path()
+    elif choice == "right":
+        cave_path()
+    else:
+        print("Invalid choice. Please enter 'left' or 'right'.")
+        start_adventure()
+
+def forest_path():
+    print("\nYou venture into the dark forest.")
+    print("After walking for a while, you encounter a river.")
+    print("Do you try to swim across or look for a bridge? (swim/bridge)")
+
+    choice = input().lower()
+
+    if choice == "swim":
+        print("\nYou attempt to swim across the river.")
+        print("Unfortunately, the current is too strong, and you drown.")
+        game_over()
+    elif choice == "bridge":
+        print("\nYou find a sturdy bridge and cross the river safely.")
+        print("On the other side, you see a small cabin.")
+        print("Do you investigate the cabin or continue on your journey? (cabin/continue)")
+
+        choice = input().lower()
+
+        if choice == "cabin":
+            print("\nYou enter the cabin and find a treasure chest!")
+            print("Congratulations! You win!")
+        elif choice == "continue":
+            print("\nYou decide to continue your journey.")
+            print("You never know what adventures await!")
+        else:
+            print("Invalid choice. Please enter 'cabin' or 'continue'.")
+            forest_path()
+    else:
+        print("Invalid choice. Please enter 'swim' or 'bridge'.")
+        forest_path()
+
+def cave_path():
+    print("\nYou enter the mysterious cave.")
+    print("It's dark and damp, and you can barely see anything.")
+    print("You can either try to find your way through the darkness or light a torch. (find/light)")
+
+    choice = input().lower()
+
+    if choice == "find":
+        print("\nYou stumble in the darkness and fall into a pit.")
+        print("You're injured and unable to continue.")
+        game_over()
+    elif choice == "light":
+        print("\nYou light a torch and illuminate the cave.")
+        print("You see a narrow path leading deeper into the cave.")
+        print("Do you follow the path or turn back? (follow/turn back)")
+
+        choice = input().lower()
+
+        if choice == "follow":
+            print("\nYou bravely venture deeper into the cave.")
+            print("After a while, you emerge into a vast chamber.")
+            print("You find a pile of gold coins!")
+            print("Congratulations! You win!")
+        elif choice == "turn back":
+            print("\nYou decide to turn back and exit the cave.")
+            print("Perhaps it's best not to risk it.")
+        else:
+            print("Invalid choice. Please enter 'follow' or 'turn back'.")
+            cave_path()
+    else:
+        print("Invalid choice. Please enter 'find' or 'light'.")
+        cave_path()
+
+def game_over():
+    print("\nGame Over!")
+
+def main():
+    start_adventure()
+
+if __name__ == "__main__":
+    main()
